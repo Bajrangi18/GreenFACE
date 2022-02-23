@@ -25,14 +25,14 @@ const constraints = {
   }
 };
 
-const getCameraSelection = async () => {
-  const devices = await navigator.mediaDevices.enumerateDevices();
-  const videoDevices = devices.filter(device => device.kind === 'videoinput');
-  const options = videoDevices.map(videoDevice => {
-    return `<option value="${videoDevice.deviceId}">${videoDevice.label}</option>`;
-  });
-  cameraOptions.innerHTML = options.join('');
-};
+// const getCameraSelection = async () => {
+//   const devices = await navigator.mediaDevices.enumerateDevices();
+//   const videoDevices = devices.filter(device => device.kind === 'videoinput');
+//   const options = videoDevices.map(videoDevice => {
+//     return `<option value="${videoDevice.deviceId}">${videoDevice.label}</option>`;
+//   });
+//   cameraOptions.innerHTML = options.join('');
+// };
 
 play.onclick = () => {
   if (streamStarted) {
@@ -65,4 +65,4 @@ const handleStream = (stream) => {
   streamStarted = true;
 };
 
-getCameraSelection();
+// getCameraSelection();
