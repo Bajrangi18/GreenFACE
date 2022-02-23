@@ -10,29 +10,8 @@ let streamStarted = false;
 
 const [play, pause, screenshot] = buttons;
 
-const constraints = {
-  video: {
-    width: {
-      min: 1280,
-      ideal: 1920,
-      max: 2560,
-    },
-    height: {
-      min: 720,
-      ideal: 1080,
-      max: 1440
-    },
-  }
-};
 
-// const getCameraSelection = async () => {
-//   const devices = await navigator.mediaDevices.enumerateDevices();
-//   const videoDevices = devices.filter(device => device.kind === 'videoinput');
-//   const options = videoDevices.map(videoDevice => {
-//     return `<option value="${videoDevice.deviceId}">${videoDevice.label}</option>`;
-//   });
-//   cameraOptions.innerHTML = options.join('');
-// };
+
 
 play.onclick = () => {
   if (streamStarted) {
@@ -42,13 +21,21 @@ play.onclick = () => {
     return;
   }
   if ('mediaDevices' in navigator && navigator.mediaDevices.getUserMedia) {
-    const updatedConstraints = {
-      ...constraints,
-      deviceId: {
-        exact: cameraOptions.value
+    const constraints = {
+      video: {
+        width: {
+          min: 1280,
+          ideal: 1920,
+          max: 2560,
+        },
+        height: {
+          min: 720,
+          ideal: 1080,
+          max: 1440
+        },
       }
     };
-    startStream(updatedConstraints);
+    startStream(constraints);
   }
 };
 
@@ -64,5 +51,3 @@ const handleStream = (stream) => {
   screenshot.classList.remove('d-none');
   streamStarted = true;
 };
-
-// getCameraSelection();
