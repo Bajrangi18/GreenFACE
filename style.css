@@ -1,5 +1,5 @@
 #col_mid {
-  background: #008037;
+  background: #339966;
   color: #003366;
   font-size: large;
 
@@ -10,10 +10,10 @@
   overflow: hidden;
 }
 #basic_col {
-  background: #008037;
+  background: #339966;
 }
 #basic_col_top {
-  background: #008037;
+  background: #339966;
 }
 
 div.container-fluid {
@@ -26,7 +26,7 @@ video {
   display: block;
 }
 body {
-  background-color: #008037;
+  background-color: #339966;
 }
 #logo {
   height: 100px;
