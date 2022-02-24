@@ -1,18 +1,37 @@
 #col_mid {
-  background: #87ED40;
+  background: #008037;
   color: #003366;
   font-size: large;
-}
 
+}
+#con1 {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
 #basic_col {
-  background: #87ED40;
+  background: #008037;
+}
+#basic_col_top {
+  background: #008037;
 }
 
-div.main {
-  height: 300px;
+div.container-fluid {
+  height: 300em;
 }
 
 video {
-  width: auto    !important;
-  height: auto   !important;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+body {
+  background-color: #008037;
+}
+#logo {
+  height: 100px;
+  width: 400px;
+}
+#con2 {
+  width: 15em;
 }
